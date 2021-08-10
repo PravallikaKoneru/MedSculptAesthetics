@@ -1,0 +1,59 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+ /*.llei-container {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, .4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.llei-row {
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+  max-height: 80vh;
+
+}
+.llei-col {
+  width: 100%;
+  border-radius: 4px;
+  background-color: #FFF;
+  padding: 1em 1em 2em;
+}
+.llei-close {
+  font-size: 50px;
+  float: right;
+  line-height: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.llei-popup__inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.llei-popup__inner__left, .llei-popup__inner__right {
+  flex-basis: 50%;
+  padding: 20px 30px;
+}
+@media (max-width: 800px) {
+  .llei-popup__inner {
+    flex-direction: column;
+  }
+  .llei-popup__inner__left img {
+    max-height: 30vh;
+    display: block;
+    margin: 0 auto;
+  }
+}
+.llei-hidden {
+  display: none;
+}*/

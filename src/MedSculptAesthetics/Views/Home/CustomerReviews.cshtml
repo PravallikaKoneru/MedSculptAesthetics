@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MedSculptAesthetics.Models.CustomerReview>
+
+@{
+    ViewData["Title"] = "CustomerReviews";
+}
+<link rel="stylesheet" id="form-css" href="~/css/form.css" type="text/css" media="all">
+<link rel="stylesheet" id="carousel-css" href="~/css/carousel.css" type="text/css" media="all">
+<script type="text/javascript" src="~/js/carousel.js" id="carousel-js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Lobster+Two:ital@0;1&family=Satisfy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Lobster+Two&family=Marck+Script&family=Merienda+One&family=The+Girl+Next+Door&family=Yomogi&display=swap" rel="stylesheet">
+
+<div class="wrap" role="document">
+    <div class="content">
+        <main class="main" role="main">
+
+
+            <div class="wrapper">
+                <form class="form" action="Review" method="post">
+                    <input type="text" class="name formEntry" placeholder="First Name" name="FirstName" required />
+                    <input type="text" class="name formEntry" placeholder="Last Name" name="LastName" required />
+                    <select placeholder="Select your rating" id="rating" name="rating" class="formEntry" style="background-color: #ebebeb;" required>
+                        <option value="" selected disabled hidden>Choose your Rating</option>
+                        <option value=5>5 Star</option>
+                        <option value=4>4 Star</option>
+                        <option value=3>3 Star</option>
+                        <option value=2>2 Star</option>
+                        <option value=1>1 Star</option>
+                        <option value=0>0 Star</option>
+                    </select>
+                    <textarea class="message formEntry" placeholder="Post Your Review" name="ReviewMessage" required></textarea>
+                    <button class="submit formEntry">Submit</button>
+                </form>
+            </div>
+            <br />
+            <br />
+            <section class="results-slider  mb-24 " id="component-1">
+                <div class="container">
+                    <div class="mhn-slide owl-carousel">
+                        @foreach (var item in Model)
+                        {
+                        <div class="mhn-item">
+                            <div class="mhn-inner bg-blue-300">
+                                <div class="mhn-text">
+                                    <h4></h4>
+                                    <p style="font-family: 'Merienda One', cursive;">❝@item.review❞</p>
+                                    <br />
+                                    <div class="row" style="justify-content: space-between;">
+                                        <div class="col" style="font-family: 'Caveat', cursive; text-align: start ">@item.created_dt.ToString("dd-MMM-yyyy")</div>
+
+                                        <div class="col" style="font-family: 'Caveat', cursive; text-align: end ">@item.first_name</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+
+                    </div>
+                </div>
+            </section>
+       
+            </main><!-- /.main -->
+    </div><!-- /.content -->
+</div>
+
+
+
